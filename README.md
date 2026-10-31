@@ -127,6 +127,8 @@ Each flight runs in simulated time with a different start for the followers (±1
 | Tuned here | Kalman | 0.0340 ± 0.0015 | 0.0124 ± 0.0004 |
 | Tuned here | H-infinity | 0.0340 ± 0.0015 | 0.0122 ± 0.0003 |
 
+In each flight and pair, the bearing error of the two filters differs by less than 0.00002 rad, so the table shows the same value for both.
+
 In these flights the leaders move more slowly in simulated time than in the recorded flight of the paper. With the Table I parameters, the Kalman filter has the lower rate error here. In the paper's recorded flight, the H-infinity filter has the lower rate error, by 12 to 17 %, and `reproduce_table.py` reproduces that result. With parameters tuned for these flights, both filters perform about the same.
 
 ## Differences from the paper
