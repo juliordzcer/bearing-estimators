@@ -1,0 +1,81 @@
+# Copyright 2026 Julio Cesar Rodriguez <contact@juliordz.com>
+# SPDX-License-Identifier: Apache-2.0
+# pid_gains.yaml
+# Ganancias PID para pid_bearing_only_vision
+# Edita este archivo en lugar del launch file.
+# Versión activa: optimizada sin interfaz gráfica (2025-03)
+
+pid_bearing_vision_controller:
+  ros__parameters:
+
+    # ── Bearing-only control (PID en espacio de bearings) ──────────────────
+    pid_bearing:
+      k0_x: 2.3104629857953323
+      k1_x: 1.7971931240944192
+      k2_x: 0.00023960853859003166
+
+      k0_y: 2.3104629857953323
+      k1_y: 1.7971931240944192
+      k2_y: 0.00023960853859003166
+
+      k0_z: 2.273835115741267
+      k1_z: 1.2554487413172255
+      k2_z: 0.00046450412719997725
+
+      integral_limit: 0.1
+
+    velocity_filter_alpha: 0.85
+
+    # ── PID clásico XYZ + Yaw (para líderes con trayectoria) ───────────────
+    pid:
+      # X
+      kp_x: 1.5
+      ki_x: 0.2
+      kd_x: 0.05
+      min_output_x: -5.0
+      max_output_x:  5.0
+      integrator_min_x: -2.0
+      integrator_max_x:  2.0
+
+      # Y
+      kp_y: 1.5
+      ki_y: 0.2
+      kd_y: 0.05
+      min_output_y: -5.0
+      max_output_y:  5.0
+      integrator_min_y: -2.0
+      integrator_max_y:  2.0
+
+      # Z (altura)
+      kp_z: 1.2
+      ki_z: 0.12
+      kd_z: 0.04
+      min_output_z: -5.0
+      max_output_z:  5.0
+      integrator_min_z: -2.0
+      integrator_max_z:  2.0
+
+      # Yaw
+      kp_yaw: 1.2
+      ki_yaw: 0.1
+      kd_yaw: 0.5
+      min_output_yaw: -3.0
+      max_output_yaw:  3.0
+      integrator_min_yaw: -1.0
+      integrator_max_yaw:  1.0
+
+# =============================================================================
+# VERSIONES ANTERIORES (referencia histórica — NO se cargan)
+# =============================================================================
+#
+# v1 — Ganancias base:
+#   k0_x: 2.511  k1_x: 1.597  k2_x: 0.00090
+#   k0_z: 2.236  k1_z: 1.317  k2_z: 0.00187
+#
+# v2 — Optimizadas con GUI:
+#   k0_x: 2.237  k1_x: 1.961  k2_x: 0.000878
+#   k0_z: 1.898  k1_z: 0.994  k2_z: 0.001560
+#
+# v3 — NTSMC sin GUI:
+#   k0_x: 1.952  k1_x: 1.893  k2_x: 0.000721
+#   k0_z: 2.062  k1_z: 0.912  k2_z: 0.009699

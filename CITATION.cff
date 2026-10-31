@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use these simulations, please cite the corresponding paper."
+title: "CCE 2026 Bearing Estimators Simulation"
+type: software
+repository-code: "https://github.com/juliordzcer/cce2026-bearing-estimators"
+license: Apache-2.0
+authors:
+  - family-names: "Rodriguez"
+    given-names: "Julio Cesar"
+    email: "contact@juliordz.com"
+preferred-citation:
+  type: conference-paper
+  title: "Bearing Estimation on S2 via Tangent-Space Measurements for UAV Formation Control"
+  authors:
+    - family-names: "Rodríguez"
+      given-names: "Julio César"
+    - family-names: "Becerra"
+      given-names: "Héctor M."
+    - family-names: "Ruiz León"
+      given-names: "Javier"
+  collection-title: "2026 23rd International Conference on Electrical Engineering, Computing Science and Automatic Control (CCE)"
+  year: 2026
+  start: 1
+  end: 6
+  url: "https://ieeexplore.ieee.org/document/11735014"

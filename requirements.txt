@@ -1,0 +1,7 @@
+# Copyright 2026 Julio Cesar Rodriguez <contact@juliordz.com>
+# SPDX-License-Identifier: Apache-2.0
+# Python packages that are not installed from apt.
+# Ubuntu ships an older OpenCV without the ArUco detector API used here.
+opencv-contrib-python==4.10.0.84
+# ROS 2 Jazzy (cv_bridge, rclpy) is built against NumPy 1.x.
+numpy<2

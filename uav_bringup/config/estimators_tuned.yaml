@@ -1,0 +1,15 @@
+# Copyright 2026 Julio Cesar Rodriguez <contact@juliordz.com>
+# SPDX-License-Identifier: Apache-2.0
+# Estimator parameters tuned on simulated-time flights of this repository.
+/**:
+  ros__parameters:
+    kf_q_vel: 0.020001
+    kf_r_base: 0.015301
+    kf_r_scale: 0.0063895
+    hinf_gamma: 2.3147
+    hinf_q_vel: 0.060555
+    hinf_r_base: 0.086687
+    hinf_r_scale: 0.00033115
+    hinf_l_pos: 2.5844
+    hinf_l_vel: 0.99927
+    hinf_l_acc: 0.0066723

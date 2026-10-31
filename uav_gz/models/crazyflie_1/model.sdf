@@ -1,0 +1,170 @@
+<?xml version="1.0"?>
+<sdf version="1.9">
+  <model name="crazyflie_1">
+    <link name="body">
+      <pose>0 0 0.017425 0 0 0</pose>
+      <inertial>
+        <mass>0.025</mass>
+        <inertia>
+          <ixx>16.571710E-06</ixx><ixy>0.830806E-06</ixy><iyy>16.655602E-06</iyy>
+          <ixz>0.718277E-06</ixz><iyz>1.800197E-06</iyz><izz>29.261652E-06</izz>
+        </inertia>
+      </inertial>
+
+      <collision name="body_inertia_collision">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <box><size>0.10 0.10 0.03485</size></box>
+        </geometry>
+        <max_contacts>10</max_contacts>
+        <surface>
+          <bounce>
+            <restitution_coefficient>0.828</restitution_coefficient>
+            <threshold>0</threshold>
+          </bounce>
+          <friction>
+            <ode>
+              <mu>1.0</mu>
+              <mu2>0.8</mu2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <kp>10000.0</kp>
+              <kd>10.0</kd>
+              <max_vel>0.01</max_vel>
+              <min_depth>0</min_depth>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+
+      <visual name="body_inertia_visual">
+        <geometry>
+          <mesh><uri>model://crazyflie_1/meshes/cf2_assembly.dae</uri></mesh>
+        </geometry>
+      </visual>      
+
+      <!-- <sensor name='multiranger' type='gpu_lidar'>
+        <pose>0 0 0.1 0 0 0</pose>
+        <update_rate>10</update_rate>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>4</samples><resolution>1</resolution>
+              <min_angle>-3.14</min_angle><max_angle>1.57</max_angle>
+            </horizontal>
+            <vertical>
+              <samples>1</samples><resolution>0.01</resolution>
+              <min_angle>0</min_angle><max_angle>0</max_angle>
+            </vertical>
+          </scan>
+          <range>
+            <min>0.01</min><max>3.49</max><resolution>0.01</resolution>
+          </range>
+        </ray>
+        <always_on>1</always_on>
+        <visualize>false</visualize>
+      </sensor> -->
+
+      <!-- <sensor name="rgb_camera_sensor" type="camera">
+        <pose>0.045 0 0 0 0 0</pose>
+        <always_on>true</always_on>
+        <update_rate>15</update_rate>
+        <camera>
+          <horizontal_fov>1.1519</horizontal_fov>
+          <image>
+            <width>320</width>
+            <height>240</height>
+            <format>RGB_INT8</format>
+          </image>
+          <clip><near>0.1</near><far>30</far></clip>
+          
+          <distortion>
+            <k1>-0.25</k1><k2>0.12</k2><k3>0.0</k3>
+            <p1>0.0</p1><p2>0.0</p2><center>0.5 0.5</center>
+          </distortion>
+
+          <noise>
+            <type>gaussian</type><mean>0.0</mean><stddev>0.005</stddev>
+          </noise>
+        </camera>
+        <visualize>false</visualize>
+      </sensor> -->
+
+
+    </link>
+
+    <link name='propeller_rr'>
+      <pose>-0.031 -0.031 0.021 0 0 0</pose>
+      <inertial>
+        <mass>0.0008</mass>
+        <inertia>
+          <ixx>8.33333E-09</ixx><iyy>1.08333E-07</iyy><izz>1.13333E-07</izz>
+        </inertia>
+      </inertial>
+      <!-- <visual name="propeller_rr_visual">
+        <geometry><mesh><uri>model://crazyflie_1/meshes/cw_prop.dae</uri></mesh></geometry>
+      </visual> -->
+    </link>
+
+    <joint name='propeller_rr_joint' type='revolute'>
+      <child>propeller_rr</child><parent>body</parent>
+      <axis><xyz>0 0 1</xyz></axis>
+    </joint>
+
+    <link name='propeller_rl'>
+      <pose>-0.031 0.031 0.021 0 0 0</pose>
+      <inertial>
+        <mass>0.0008</mass>
+        <inertia>
+          <ixx>8.33333E-09</ixx><iyy>1.08333E-07</iyy><izz>1.13333E-07</izz>
+        </inertia>
+      </inertial>
+      <!-- <visual name="propeller_rl_visual">
+        <geometry><mesh><uri>model://crazyflie_1/meshes/ccw_prop.dae</uri></mesh></geometry>
+      </visual> -->
+    </link>
+
+    <joint name='propeller_rl_joint' type='revolute'>
+      <child>propeller_rl</child><parent>body</parent>
+      <axis><xyz>0 0 1</xyz></axis>
+    </joint>
+
+    <link name='propeller_fr'>
+      <pose>0.031 -0.031 0.021 0 0 0</pose>
+      <inertial>
+        <mass>0.0008</mass>
+        <inertia>
+          <ixx>8.33333E-09</ixx><iyy>1.08333E-07</iyy><izz>1.13333E-07</izz>
+        </inertia>
+      </inertial>
+      <!-- <visual name="propeller_fr_visual">
+        <geometry><mesh><uri>model://crazyflie_1/meshes/ccw_prop.dae</uri></mesh></geometry>
+      </visual> -->
+    </link>
+
+    <joint name='propeller_fr_joint' type='revolute'>
+      <child>propeller_fr</child><parent>body</parent>
+      <axis><xyz>0 0 1</xyz></axis>
+    </joint>
+
+    <link name='propeller_fl'>
+      <pose>0.031 0.031 0.021 0 0 0</pose>
+      <inertial>
+        <mass>0.0008</mass>
+        <inertia>
+          <ixx>8.33333E-09</ixx><iyy>1.08333E-07</iyy><izz>1.13333E-07</izz>
+        </inertia>
+      </inertial>
+      <!-- <visual name="propeller_fl_visual">
+        <geometry><mesh><uri>model://crazyflie_1/meshes/cw_prop.dae</uri></mesh></geometry>
+      </visual> -->
+    </link>
+
+    <joint name='propeller_fl_joint' type='revolute'>
+      <child>propeller_fl</child><parent>body</parent>
+      <axis><xyz>0 0 1</xyz></axis>
+    </joint>
+  </model>
+</sdf>

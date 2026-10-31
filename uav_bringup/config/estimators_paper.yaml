@@ -1,0 +1,15 @@
+# Copyright 2026 Julio Cesar Rodriguez <contact@juliordz.com>
+# SPDX-License-Identifier: Apache-2.0
+# Estimator parameters of Table I in the CCE 2026 paper.
+/**:
+  ros__parameters:
+    kf_q_vel: 0.0212
+    kf_r_base: 0.001122
+    kf_r_scale: 3.7768e-05
+    hinf_gamma: 4.6024
+    hinf_q_vel: 0.1986
+    hinf_r_base: 0.001122
+    hinf_r_scale: 3.7768e-05
+    hinf_l_pos: 1.6759
+    hinf_l_vel: 0.2025
+    hinf_l_acc: 0.5953

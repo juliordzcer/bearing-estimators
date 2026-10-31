@@ -1,0 +1,54 @@
+# Build artifacts
+build/
+install/
+log/
+
+# Gazebo plugin build artifacts
+uav_gz/plugins/build/
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+*.pyo
+
+# C++ compiled objects
+*.o
+*.a
+*.so
+
+# CMake cache
+CMakeCache.txt
+CMakeFiles/
+
+# IDE files
+.vscode/settings.json
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+.aider*
+
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.bbl
+*.blg
+*.toc
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+*.nav
+*.snm
+*.vrb
+# Python
+__pycache__/
+*.py[cod]
+build/
+install/
+log/
+__pycache__/
+results/my_run/
