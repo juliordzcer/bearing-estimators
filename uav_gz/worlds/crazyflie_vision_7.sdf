@@ -945,230 +945,76 @@
       </plugin>
     </include>
 
-      <model name="tree_0">
-      <static>true</static>
-      <pose>10.00 0.00 0 0 0 0</pose>
-      <link name="link">
-        <visual name="trunk">
-          <pose>0 0 0.90 0 0 0</pose>
-          <geometry><cylinder><radius>0.15</radius><length>1.80</length></cylinder></geometry>
-          <material><ambient>0.36 0.26 0.17 1</ambient><diffuse>0.36 0.26 0.17 1</diffuse><specular>0.02 0.02 0.02 1</specular></material>
-        </visual>
-        <visual name="crown">
-          <pose>0 0 3.06 0 0 0</pose>
-          <geometry><sphere><radius>1.10</radius></sphere></geometry>
-          <material><ambient>0.20 0.42 0.20 1</ambient><diffuse>0.20 0.42 0.20 1</diffuse><specular>0.02 0.02 0.02 1</specular></material>
-        </visual>
-      </link>
-    </model>
-    <model name="tree_1">
-      <static>true</static>
-      <pose>11.97 11.35 0 0 0 0</pose>
-      <link name="link">
-        <visual name="trunk">
-          <pose>0 0 1.26 0 0 0</pose>
-          <geometry><cylinder><radius>0.25</radius><length>2.52</length></cylinder></geometry>
-          <material><ambient>0.36 0.26 0.17 1</ambient><diffuse>0.36 0.26 0.17 1</diffuse><specular>0.02 0.02 0.02 1</specular></material>
-        </visual>
-        <visual name="crown">
-          <pose>0 0 4.28 0 0 0</pose>
-          <geometry><sphere><radius>1.76</radius></sphere></geometry>
-          <material><ambient>0.26 0.48 0.22 1</ambient><diffuse>0.26 0.48 0.22 1</diffuse><specular>0.02 0.02 0.02 1</specular></material>
-        </visual>
-      </link>
-    </model>
-    <model name="tree_2">
-      <static>true</static>
-      <pose>0.74 13.88 0 0 0 0</pose>
-      <link name="link">
-        <visual name="trunk">
-          <pose>0 0 1.02 0 0 0</pose>
-          <geometry><cylinder><radius>0.22</radius><length>2.04</length></cylinder></geometry>
-          <material><ambient>0.36 0.26 0.17 1</ambient><diffuse>0.36 0.26 0.17 1</diffuse><specular>0.02 0.02 0.02 1</specular></material>
-        </visual>
-        <visual name="crown">
-          <pose>0 0 3.47 0 0 0</pose>
-          <geometry><sphere><radius>1.54</radius></sphere></geometry>
-          <material><ambient>0.17 0.37 0.22 1</ambient><diffuse>0.17 0.37 0.22 1</diffuse><specular>0.02 0.02 0.02 1</specular></material>
-        </visual>
-      </link>
-    </model>
-    <model name="tree_3">
-      <static>true</static>
-      <pose>2.51 11.02 0 0 0 0</pose>
-      <link name="link">
-        <visual name="trunk">
-          <pose>0 0 1.38 0 0 0</pose>
-          <geometry><cylinder><radius>0.18</radius><length>2.76</length></cylinder></geometry>
-          <material><ambient>0.36 0.26 0.17 1</ambient><diffuse>0.36 0.26 0.17 1</diffuse><specular>0.02 0.02 0.02 1</specular></material>
-        </visual>
-        <visual name="crown">
-          <pose>0 0 4.69 0 0 0</pose>
-          <geometry><sphere><radius>1.32</radius></sphere></geometry>
-          <material><ambient>0.20 0.42 0.20 1</ambient><diffuse>0.20 0.42 0.20 1</diffuse><specular>0.02 0.02 0.02 1</specular></material>
-        </visual>
-      </link>
-    </model>
-    <model name="tree_4">
-      <static>true</static>
-      <pose>-9.07 15.32 0 0 0 0</pose>
-      <link name="link">
-        <visual name="trunk">
-          <pose>0 0 1.14 0 0 0</pose>
-          <geometry><cylinder><radius>0.15</radius><length>2.28</length></cylinder></geometry>
-          <material><ambient>0.36 0.26 0.17 1</ambient><diffuse>0.36 0.26 0.17 1</diffuse><specular>0.02 0.02 0.02 1</specular></material>
-        </visual>
-        <visual name="crown">
-          <pose>0 0 3.88 0 0 0</pose>
-          <geometry><sphere><radius>1.10</radius></sphere></geometry>
-          <material><ambient>0.26 0.48 0.22 1</ambient><diffuse>0.26 0.48 0.22 1</diffuse><specular>0.02 0.02 0.02 1</specular></material>
-        </visual>
-      </link>
-    </model>
-    <model name="tree_5">
-      <static>true</static>
-      <pose>-14.62 4.17 0 0 0 0</pose>
-      <link name="link">
-        <visual name="trunk">
-          <pose>0 0 0.90 0 0 0</pose>
-          <geometry><cylinder><radius>0.25</radius><length>1.80</length></cylinder></geometry>
-          <material><ambient>0.36 0.26 0.17 1</ambient><diffuse>0.36 0.26 0.17 1</diffuse><specular>0.02 0.02 0.02 1</specular></material>
-        </visual>
-        <visual name="crown">
-          <pose>0 0 3.06 0 0 0</pose>
-          <geometry><sphere><radius>1.76</radius></sphere></geometry>
-          <material><ambient>0.17 0.37 0.22 1</ambient><diffuse>0.17 0.37 0.22 1</diffuse><specular>0.02 0.02 0.02 1</specular></material>
-        </visual>
-      </link>
-    </model>
-    <model name="tree_6">
-      <static>true</static>
-      <pose>-11.35 5.47 0 0 0 0</pose>
-      <link name="link">
-        <visual name="trunk">
-          <pose>0 0 1.26 0 0 0</pose>
-          <geometry><cylinder><radius>0.22</radius><length>2.52</length></cylinder></geometry>
-          <material><ambient>0.36 0.26 0.17 1</ambient><diffuse>0.36 0.26 0.17 1</diffuse><specular>0.02 0.02 0.02 1</specular></material>
-        </visual>
-        <visual name="crown">
-          <pose>0 0 4.28 0 0 0</pose>
-          <geometry><sphere><radius>1.54</radius></sphere></geometry>
-          <material><ambient>0.20 0.42 0.20 1</ambient><diffuse>0.20 0.42 0.20 1</diffuse><specular>0.02 0.02 0.02 1</specular></material>
-        </visual>
-      </link>
-    </model>
-    <model name="tree_7">
-      <static>true</static>
-      <pose>-9.52 -3.05 0 0 0 0</pose>
-      <link name="link">
-        <visual name="trunk">
-          <pose>0 0 1.02 0 0 0</pose>
-          <geometry><cylinder><radius>0.18</radius><length>2.04</length></cylinder></geometry>
-          <material><ambient>0.36 0.26 0.17 1</ambient><diffuse>0.36 0.26 0.17 1</diffuse><specular>0.02 0.02 0.02 1</specular></material>
-        </visual>
-        <visual name="crown">
-          <pose>0 0 3.47 0 0 0</pose>
-          <geometry><sphere><radius>1.32</radius></sphere></geometry>
-          <material><ambient>0.26 0.48 0.22 1</ambient><diffuse>0.26 0.48 0.22 1</diffuse><specular>0.02 0.02 0.02 1</specular></material>
-        </visual>
-      </link>
-    </model>
-    <model name="tree_8">
-      <static>true</static>
-      <pose>-7.94 -14.46 0 0 0 0</pose>
-      <link name="link">
-        <visual name="trunk">
-          <pose>0 0 1.38 0 0 0</pose>
-          <geometry><cylinder><radius>0.15</radius><length>2.76</length></cylinder></geometry>
-          <material><ambient>0.36 0.26 0.17 1</ambient><diffuse>0.36 0.26 0.17 1</diffuse><specular>0.02 0.02 0.02 1</specular></material>
-        </visual>
-        <visual name="crown">
-          <pose>0 0 4.69 0 0 0</pose>
-          <geometry><sphere><radius>1.10</radius></sphere></geometry>
-          <material><ambient>0.17 0.37 0.22 1</ambient><diffuse>0.17 0.37 0.22 1</diffuse><specular>0.02 0.02 0.02 1</specular></material>
-        </visual>
-      </link>
-    </model>
-    <model name="tree_9">
-      <static>true</static>
-      <pose>-8.67 -10.87 0 0 0 0</pose>
-      <link name="link">
-        <visual name="trunk">
-          <pose>0 0 1.14 0 0 0</pose>
-          <geometry><cylinder><radius>0.25</radius><length>2.28</length></cylinder></geometry>
-          <material><ambient>0.36 0.26 0.17 1</ambient><diffuse>0.36 0.26 0.17 1</diffuse><specular>0.02 0.02 0.02 1</specular></material>
-        </visual>
-        <visual name="crown">
-          <pose>0 0 3.88 0 0 0</pose>
-          <geometry><sphere><radius>1.76</radius></sphere></geometry>
-          <material><ambient>0.20 0.42 0.20 1</ambient><diffuse>0.20 0.42 0.20 1</diffuse><specular>0.02 0.02 0.02 1</specular></material>
-        </visual>
-      </link>
-    </model>
-    <model name="tree_10">
-      <static>true</static>
-      <pose>0.97 -11.26 0 0 0 0</pose>
-      <link name="link">
-        <visual name="trunk">
-          <pose>0 0 0.90 0 0 0</pose>
-          <geometry><cylinder><radius>0.22</radius><length>1.80</length></cylinder></geometry>
-          <material><ambient>0.36 0.26 0.17 1</ambient><diffuse>0.36 0.26 0.17 1</diffuse><specular>0.02 0.02 0.02 1</specular></material>
-        </visual>
-        <visual name="crown">
-          <pose>0 0 3.06 0 0 0</pose>
-          <geometry><sphere><radius>1.54</radius></sphere></geometry>
-          <material><ambient>0.26 0.48 0.22 1</ambient><diffuse>0.26 0.48 0.22 1</diffuse><specular>0.02 0.02 0.02 1</specular></material>
-        </visual>
-      </link>
-    </model>
-    <model name="tree_11">
-      <static>true</static>
-      <pose>13.31 -11.82 0 0 0 0</pose>
-      <link name="link">
-        <visual name="trunk">
-          <pose>0 0 1.26 0 0 0</pose>
-          <geometry><cylinder><radius>0.18</radius><length>2.52</length></cylinder></geometry>
-          <material><ambient>0.36 0.26 0.17 1</ambient><diffuse>0.36 0.26 0.17 1</diffuse><specular>0.02 0.02 0.02 1</specular></material>
-        </visual>
-        <visual name="crown">
-          <pose>0 0 4.28 0 0 0</pose>
-          <geometry><sphere><radius>1.32</radius></sphere></geometry>
-          <material><ambient>0.17 0.37 0.22 1</ambient><diffuse>0.17 0.37 0.22 1</diffuse><specular>0.02 0.02 0.02 1</specular></material>
-        </visual>
-      </link>
-    </model>
-    <model name="tree_12">
-      <static>true</static>
-      <pose>9.48 -11.88 0 0 0 0</pose>
-      <link name="link">
-        <visual name="trunk">
-          <pose>0 0 1.02 0 0 0</pose>
-          <geometry><cylinder><radius>0.15</radius><length>2.04</length></cylinder></geometry>
-          <material><ambient>0.36 0.26 0.17 1</ambient><diffuse>0.36 0.26 0.17 1</diffuse><specular>0.02 0.02 0.02 1</specular></material>
-        </visual>
-        <visual name="crown">
-          <pose>0 0 3.47 0 0 0</pose>
-          <geometry><sphere><radius>1.10</radius></sphere></geometry>
-          <material><ambient>0.20 0.42 0.20 1</ambient><diffuse>0.20 0.42 0.20 1</diffuse><specular>0.02 0.02 0.02 1</specular></material>
-        </visual>
-      </link>
-    </model>
-    <model name="tree_13">
-      <static>true</static>
-      <pose>12.48 -1.74 0 0 0 0</pose>
-      <link name="link">
-        <visual name="trunk">
-          <pose>0 0 1.38 0 0 0</pose>
-          <geometry><cylinder><radius>0.25</radius><length>2.76</length></cylinder></geometry>
-          <material><ambient>0.36 0.26 0.17 1</ambient><diffuse>0.36 0.26 0.17 1</diffuse><specular>0.02 0.02 0.02 1</specular></material>
-        </visual>
-        <visual name="crown">
-          <pose>0 0 4.69 0 0 0</pose>
-          <geometry><sphere><radius>1.76</radius></sphere></geometry>
-          <material><ambient>0.26 0.48 0.22 1</ambient><diffuse>0.26 0.48 0.22 1</diffuse><specular>0.02 0.02 0.02 1</specular></material>
-        </visual>
-      </link>
-    </model>
+      <include>
+      <uri>model://oak_tree</uri>
+      <name>tree_0</name>
+      <pose>10.00 0.00 0 0 0 0.00</pose>
+    </include>
+    <include>
+      <uri>model://pine_tree</uri>
+      <name>tree_1</name>
+      <pose>11.97 11.35 0 0 0 0.70</pose>
+    </include>
+    <include>
+      <uri>model://oak_tree</uri>
+      <name>tree_2</name>
+      <pose>0.74 13.88 0 0 0 1.40</pose>
+    </include>
+    <include>
+      <uri>model://oak_tree</uri>
+      <name>tree_3</name>
+      <pose>2.51 11.02 0 0 0 2.10</pose>
+    </include>
+    <include>
+      <uri>model://pine_tree</uri>
+      <name>tree_4</name>
+      <pose>-9.07 15.32 0 0 0 2.80</pose>
+    </include>
+    <include>
+      <uri>model://oak_tree</uri>
+      <name>tree_5</name>
+      <pose>-14.62 4.17 0 0 0 3.50</pose>
+    </include>
+    <include>
+      <uri>model://oak_tree</uri>
+      <name>tree_6</name>
+      <pose>-11.35 5.47 0 0 0 4.20</pose>
+    </include>
+    <include>
+      <uri>model://pine_tree</uri>
+      <name>tree_7</name>
+      <pose>-9.52 -3.05 0 0 0 4.90</pose>
+    </include>
+    <include>
+      <uri>model://oak_tree</uri>
+      <name>tree_8</name>
+      <pose>-7.94 -14.46 0 0 0 5.60</pose>
+    </include>
+    <include>
+      <uri>model://oak_tree</uri>
+      <name>tree_9</name>
+      <pose>-8.67 -10.87 0 0 0 0.02</pose>
+    </include>
+    <include>
+      <uri>model://pine_tree</uri>
+      <name>tree_10</name>
+      <pose>0.97 -11.26 0 0 0 0.72</pose>
+    </include>
+    <include>
+      <uri>model://oak_tree</uri>
+      <name>tree_11</name>
+      <pose>13.31 -11.82 0 0 0 1.42</pose>
+    </include>
+    <include>
+      <uri>model://oak_tree</uri>
+      <name>tree_12</name>
+      <pose>9.48 -11.88 0 0 0 2.12</pose>
+    </include>
+    <include>
+      <uri>model://pine_tree</uri>
+      <name>tree_13</name>
+      <pose>12.48 -1.74 0 0 0 2.82</pose>
+    </include>
     <model name="pad_1">
       <static>true</static>
       <pose>0.352 0.352 0.002 0 0 0</pose>

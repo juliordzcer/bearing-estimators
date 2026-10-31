@@ -13,3 +13,7 @@ the differences.
 
 Third-party material:
   uav_gz/models/crazyflie*  Crazyflie model, Copyright (c) 2022 Bitcraze, MIT License.
+
+Tree models:
+  uav_gz/models/oak_tree, uav_gz/models/pine_tree  Oak tree and Pine Tree from Gazebo Fuel, by
+  Open Robotics (Louise Poubel), CC0 1.0. Collisions removed.

@@ -122,10 +122,10 @@ Each flight runs in simulated time with a different start for the followers (±1
 
 | Parameters | Estimator | RMSE of the bearing [rad] | RMSE of the bearing rate [rad/s] |
 |---|---|---|---|
-| Table I of the paper | Kalman | 0.0347 ± 0.0015 | 0.0136 ± 0.0004 |
-| Table I of the paper | H-infinity | 0.0347 ± 0.0015 | 0.0157 ± 0.0004 |
-| Tuned here | Kalman | 0.0347 ± 0.0015 | 0.0126 ± 0.0005 |
-| Tuned here | H-infinity | 0.0347 ± 0.0015 | 0.0125 ± 0.0004 |
+| Table I of the paper | Kalman | 0.0340 ± 0.0015 | 0.0133 ± 0.0004 |
+| Table I of the paper | H-infinity | 0.0340 ± 0.0015 | 0.0154 ± 0.0005 |
+| Tuned here | Kalman | 0.0340 ± 0.0015 | 0.0124 ± 0.0004 |
+| Tuned here | H-infinity | 0.0340 ± 0.0015 | 0.0122 ± 0.0003 |
 
 In these flights the leaders move more slowly in simulated time than in the recorded flight of the paper. With the Table I parameters, the Kalman filter has the lower rate error here. In the paper's recorded flight, the H-infinity filter has the lower rate error, by 12 to 17 %, and `reproduce_table.py` reproduces that result. With parameters tuned for these flights, both filters perform about the same.
 
@@ -201,6 +201,6 @@ If you use this code, please cite both the paper and this repository.
 
 ## License
 
-The code is under the [Apache License 2.0](LICENSE). Keep the [NOTICE](NOTICE) file in copies and derived works. The Crazyflie models in `uav_gz/models` belong to Bitcraze and are under the MIT license.
+The code is under the [Apache License 2.0](LICENSE). Keep the [NOTICE](NOTICE) file in copies and derived works. The Crazyflie models in `uav_gz/models` belong to Bitcraze and are under the MIT license. The tree models are under CC0 and come from Gazebo Fuel.
 
 Contact: Julio Cesar Rodriguez, contact@juliordz.com
