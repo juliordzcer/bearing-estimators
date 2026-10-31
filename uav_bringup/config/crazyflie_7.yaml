@@ -11,13 +11,13 @@
 - topic_name: "/wind/velocity"
   ros_type_name: "geometry_msgs/msg/Vector3"
   gz_type_name: "gz.msgs.Vector3d"
-  lazy: true
+  lazy: false
   direction: ROS_TO_GZ
 
 - topic_name: "/wind/enable"
   ros_type_name: "std_msgs/msg/Bool"
   gz_type_name: "gz.msgs.Boolean"
-  lazy: true
+  lazy: false
   direction: ROS_TO_GZ
 
 # Robot 1
@@ -25,28 +25,28 @@
 - topic_name: "/crazyflie1/cmd_vel"
   ros_type_name: "geometry_msgs/msg/Twist"
   gz_type_name: "gz.msgs.Twist"
-  lazy: true
+  lazy: false
   direction: ROS_TO_GZ
 
 # # Motor speed command configuration.
 # - topic_name: "/crazyflie1/gazebo/command/motor_speed"
 #   ros_type_name: "std_msgs/msg/Float32"
 #   gz_type_name: "gz.msgs.Float"
-#   lazy: true
+#   lazy: false
 #   direction: ROS_TO_GZ
 
 # Enable Quadrotor command configuration.
 - topic_name: "/crazyflie1/enable"
   ros_type_name: "std_msgs/msg/Bool"
   gz_type_name: "gz.msgs.Boolean"
-  lazy: true
+  lazy: false
   direction: ROS_TO_GZ
 
 # Pose state configuration.
 - topic_name: "/crazyflie1/pose"
   ros_type_name: "geometry_msgs/msg/Pose"
   gz_type_name: "gz.msgs.Pose"
-  lazy: true
+  lazy: false
   direction: GZ_TO_ROS
   publisher_queue_size: 1
 
@@ -54,26 +54,26 @@
 - topic_name: "/crazyflie1/set_pose"
   ros_type_name: "geometry_msgs/msg/Pose"
   gz_type_name: "gz.msgs.Pose"
-  lazy: true
+  lazy: false
   direction: ROS_TO_GZ
 
 # # rgbd_camera_bridge configuration.
 # - topic_name: "/world/crazyflie/model/crazyflie1/link/body/sensor/rgb_camera_sensor/image"
 #   ros_type_name: "sensor_msgs/msg/Image"
 #   gz_type_name: "gz.msgs.Image"
-#   lazy: true
+#   lazy: false
 #   direction: GZ_TO_ROS
 
 # - topic_name: "/world/crazyflie/model/crazyflie1/link/body/sensor/rgb_camera_sensor/camera_info"
 #   ros_type_name: "sensor_msgs/msg/CameraInfo"
 #   gz_type_name: "gz.msgs.CameraInfo"
-#   lazy: true
+#   lazy: false
 #   direction: GZ_TO_ROS   
 
 - topic_name: "/crazyflie1/velocity" 
   ros_type_name: "geometry_msgs/msg/Twist"     
   gz_type_name: "gz.msgs.Twist"
-  lazy: true
+  lazy: false
   direction: GZ_TO_ROS
   publisher_queue_size: 1
 
@@ -82,28 +82,28 @@
 - topic_name: "/crazyflie2/cmd_vel"
   ros_type_name: "geometry_msgs/msg/Twist"
   gz_type_name: "gz.msgs.Twist"
-  lazy: true
+  lazy: false
   direction: ROS_TO_GZ
 
 # # Motor speed command configuration.
 # - topic_name: "/crazyflie2/gazebo/command/motor_speed"
 #   ros_type_name: "std_msgs/msg/Float32"
 #   gz_type_name: "gz.msgs.Float"
-#   lazy: true
+#   lazy: false
 #   direction: ROS_TO_GZ
 
 # Enable Quadrotor command configuration.
 - topic_name: "/crazyflie2/enable"
   ros_type_name: "std_msgs/msg/Bool"
   gz_type_name: "gz.msgs.Boolean"
-  lazy: true
+  lazy: false
   direction: ROS_TO_GZ
 
 # Pose state configuration.
 - topic_name: "/crazyflie2/pose"
   ros_type_name: "geometry_msgs/msg/Pose"
   gz_type_name: "gz.msgs.Pose"
-  lazy: true
+  lazy: false
   direction: GZ_TO_ROS
   publisher_queue_size: 1
 
@@ -111,26 +111,26 @@
 - topic_name: "/crazyflie2/set_pose"
   ros_type_name: "geometry_msgs/msg/Pose"
   gz_type_name: "gz.msgs.Pose"
-  lazy: true
+  lazy: false
   direction: ROS_TO_GZ
 
 # rgbd_camera_bridge configuration.
 - topic_name: "/world/crazyflie/model/crazyflie2/link/body/sensor/rgb_camera_sensor/image"
   ros_type_name: "sensor_msgs/msg/Image"
   gz_type_name: "gz.msgs.Image"
-  lazy: true
+  lazy: false
   direction: GZ_TO_ROS
 
 - topic_name: "/world/crazyflie/model/crazyflie2/link/body/sensor/rgb_camera_sensor/camera_info"
   ros_type_name: "sensor_msgs/msg/CameraInfo"
   gz_type_name: "gz.msgs.CameraInfo"
-  lazy: true
+  lazy: false
   direction: GZ_TO_ROS   
 
 - topic_name: "/crazyflie2/velocity" 
   ros_type_name: "geometry_msgs/msg/Twist"     
   gz_type_name: "gz.msgs.Twist"
-  lazy: true
+  lazy: false
   direction: GZ_TO_ROS
   publisher_queue_size: 1
 
@@ -139,28 +139,28 @@
 - topic_name: "/crazyflie3/cmd_vel"
   ros_type_name: "geometry_msgs/msg/Twist"
   gz_type_name: "gz.msgs.Twist"
-  lazy: true
+  lazy: false
   direction: ROS_TO_GZ
 
 # # Motor speed command configuration.
 # - topic_name: "/crazyflie3/gazebo/command/motor_speed"
 #   ros_type_name: "std_msgs/msg/Float32"
 #   gz_type_name: "gz.msgs.Float"
-#   lazy: true
+#   lazy: false
 #   direction: ROS_TO_GZ
 
 # Enable Quadrotor command configuration.
 - topic_name: "/crazyflie3/enable"
   ros_type_name: "std_msgs/msg/Bool"
   gz_type_name: "gz.msgs.Boolean"
-  lazy: true
+  lazy: false
   direction: ROS_TO_GZ
 
 # Pose state configuration.
 - topic_name: "/crazyflie3/pose"
   ros_type_name: "geometry_msgs/msg/Pose"
   gz_type_name: "gz.msgs.Pose"
-  lazy: true
+  lazy: false
   direction: GZ_TO_ROS
   publisher_queue_size: 1
 
@@ -168,26 +168,26 @@
 - topic_name: "/crazyflie3/set_pose"
   ros_type_name: "geometry_msgs/msg/Pose"
   gz_type_name: "gz.msgs.Pose"
-  lazy: true
+  lazy: false
   direction: ROS_TO_GZ
 
 # rgbd_camera_bridge configuration.
 - topic_name: "/world/crazyflie/model/crazyflie3/link/body/sensor/rgb_camera_sensor/image"
   ros_type_name: "sensor_msgs/msg/Image"
   gz_type_name: "gz.msgs.Image"
-  lazy: true
+  lazy: false
   direction: GZ_TO_ROS
 
 - topic_name: "/world/crazyflie/model/crazyflie3/link/body/sensor/rgb_camera_sensor/camera_info"
   ros_type_name: "sensor_msgs/msg/CameraInfo"
   gz_type_name: "gz.msgs.CameraInfo"
-  lazy: true
+  lazy: false
   direction: GZ_TO_ROS   
 
 - topic_name: "/crazyflie3/velocity" 
   ros_type_name: "geometry_msgs/msg/Twist"     
   gz_type_name: "gz.msgs.Twist"
-  lazy: true
+  lazy: false
   direction: GZ_TO_ROS
   publisher_queue_size: 1
 
@@ -196,28 +196,28 @@
 - topic_name: "/crazyflie4/cmd_vel"
   ros_type_name: "geometry_msgs/msg/Twist"
   gz_type_name: "gz.msgs.Twist"
-  lazy: true
+  lazy: false
   direction: ROS_TO_GZ
 
 # # Motor speed command configuration.
 # - topic_name: "/crazyflie4/gazebo/command/motor_speed"
 #   ros_type_name: "std_msgs/msg/Float32"
 #   gz_type_name: "gz.msgs.Float"
-#   lazy: true
+#   lazy: false
 #   direction: ROS_TO_GZ
 
 # Enable Quadrotor command configuration.
 - topic_name: "/crazyflie4/enable"
   ros_type_name: "std_msgs/msg/Bool"
   gz_type_name: "gz.msgs.Boolean"
-  lazy: true
+  lazy: false
   direction: ROS_TO_GZ
 
 # Pose state configuration.
 - topic_name: "/crazyflie4/pose"
   ros_type_name: "geometry_msgs/msg/Pose"
   gz_type_name: "gz.msgs.Pose"
-  lazy: true
+  lazy: false
   direction: GZ_TO_ROS
   publisher_queue_size: 1
 
@@ -225,26 +225,26 @@
 - topic_name: "/crazyflie4/set_pose"
   ros_type_name: "geometry_msgs/msg/Pose"
   gz_type_name: "gz.msgs.Pose"
-  lazy: true
+  lazy: false
   direction: ROS_TO_GZ
 
 # # rgbd_camera_bridge configuration.
 # - topic_name: "/world/crazyflie/model/crazyflie4/link/body/sensor/rgb_camera_sensor/image"
 #   ros_type_name: "sensor_msgs/msg/Image"
 #   gz_type_name: "gz.msgs.Image"
-#   lazy: true
+#   lazy: false
 #   direction: GZ_TO_ROS
 
 # - topic_name: "/world/crazyflie/model/crazyflie4/link/body/sensor/rgb_camera_sensor/camera_info"
 #   ros_type_name: "sensor_msgs/msg/CameraInfo"
 #   gz_type_name: "gz.msgs.CameraInfo"
-#   lazy: true
+#   lazy: false
 #   direction: GZ_TO_ROS   
 
 - topic_name: "/crazyflie4/velocity" 
   ros_type_name: "geometry_msgs/msg/Twist"     
   gz_type_name: "gz.msgs.Twist"
-  lazy: true
+  lazy: false
   direction: GZ_TO_ROS
   publisher_queue_size: 1
 
@@ -253,28 +253,28 @@
 - topic_name: "/crazyflie5/cmd_vel"
   ros_type_name: "geometry_msgs/msg/Twist"
   gz_type_name: "gz.msgs.Twist"
-  lazy: true
+  lazy: false
   direction: ROS_TO_GZ
 
 # # Motor speed command configuration.
 # - topic_name: "/crazyflie5/gazebo/command/motor_speed"
 #   ros_type_name: "std_msgs/msg/Float32"
 #   gz_type_name: "gz.msgs.Float"
-#   lazy: true
+#   lazy: false
 #   direction: ROS_TO_GZ
 
 # Enable Quadrotor command configuration.
 - topic_name: "/crazyflie5/enable"
   ros_type_name: "std_msgs/msg/Bool"
   gz_type_name: "gz.msgs.Boolean"
-  lazy: true
+  lazy: false
   direction: ROS_TO_GZ
 
 # Pose state configuration.
 - topic_name: "/crazyflie5/pose"
   ros_type_name: "geometry_msgs/msg/Pose"
   gz_type_name: "gz.msgs.Pose"
-  lazy: true
+  lazy: false
   direction: GZ_TO_ROS
   publisher_queue_size: 1
 
@@ -282,26 +282,26 @@
 - topic_name: "/crazyflie5/set_pose"
   ros_type_name: "geometry_msgs/msg/Pose"
   gz_type_name: "gz.msgs.Pose"
-  lazy: true
+  lazy: false
   direction: ROS_TO_GZ
 
 # rgbd_camera_bridge configuration.
 - topic_name: "/world/crazyflie/model/crazyflie5/link/body/sensor/rgb_camera_sensor/image"
   ros_type_name: "sensor_msgs/msg/Image"
   gz_type_name: "gz.msgs.Image"
-  lazy: true
+  lazy: false
   direction: GZ_TO_ROS
 
 - topic_name: "/world/crazyflie/model/crazyflie5/link/body/sensor/rgb_camera_sensor/camera_info"
   ros_type_name: "sensor_msgs/msg/CameraInfo"
   gz_type_name: "gz.msgs.CameraInfo"
-  lazy: true
+  lazy: false
   direction: GZ_TO_ROS   
 
 - topic_name: "/crazyflie5/velocity" 
   ros_type_name: "geometry_msgs/msg/Twist"     
   gz_type_name: "gz.msgs.Twist"
-  lazy: true
+  lazy: false
   direction: GZ_TO_ROS
   publisher_queue_size: 1
 
@@ -310,28 +310,28 @@
 - topic_name: "/crazyflie6/cmd_vel"
   ros_type_name: "geometry_msgs/msg/Twist"
   gz_type_name: "gz.msgs.Twist"
-  lazy: true
+  lazy: false
   direction: ROS_TO_GZ
 
 # # Motor speed command configuration.
 # - topic_name: "/crazyflie6/gazebo/command/motor_speed"
 #   ros_type_name: "std_msgs/msg/Float32"
 #   gz_type_name: "gz.msgs.Float"
-#   lazy: true
+#   lazy: false
 #   direction: ROS_TO_GZ
 
 # Enable Quadrotor command configuration.
 - topic_name: "/crazyflie6/enable"
   ros_type_name: "std_msgs/msg/Bool"
   gz_type_name: "gz.msgs.Boolean"
-  lazy: true
+  lazy: false
   direction: ROS_TO_GZ
 
 # Pose state configuration.
 - topic_name: "/crazyflie6/pose"
   ros_type_name: "geometry_msgs/msg/Pose"
   gz_type_name: "gz.msgs.Pose"
-  lazy: true
+  lazy: false
   direction: GZ_TO_ROS
   publisher_queue_size: 1
 
@@ -339,26 +339,26 @@
 - topic_name: "/crazyflie6/set_pose"
   ros_type_name: "geometry_msgs/msg/Pose"
   gz_type_name: "gz.msgs.Pose"
-  lazy: true
+  lazy: false
   direction: ROS_TO_GZ
 
 # rgbd_camera_bridge configuration.
 - topic_name: "/world/crazyflie/model/crazyflie6/link/body/sensor/rgb_camera_sensor/image"
   ros_type_name: "sensor_msgs/msg/Image"
   gz_type_name: "gz.msgs.Image"
-  lazy: true
+  lazy: false
   direction: GZ_TO_ROS
 
 - topic_name: "/world/crazyflie/model/crazyflie6/link/body/sensor/rgb_camera_sensor/camera_info"
   ros_type_name: "sensor_msgs/msg/CameraInfo"
   gz_type_name: "gz.msgs.CameraInfo"
-  lazy: true
+  lazy: false
   direction: GZ_TO_ROS   
 
 - topic_name: "/crazyflie6/velocity" 
   ros_type_name: "geometry_msgs/msg/Twist"     
   gz_type_name: "gz.msgs.Twist"
-  lazy: true
+  lazy: false
   direction: GZ_TO_ROS
   publisher_queue_size: 1
 
@@ -367,28 +367,28 @@
 - topic_name: "/crazyflie7/cmd_vel"
   ros_type_name: "geometry_msgs/msg/Twist"
   gz_type_name: "gz.msgs.Twist"
-  lazy: true
+  lazy: false
   direction: ROS_TO_GZ
 
 # # Motor speed command configuration.
 # - topic_name: "/crazyflie7/gazebo/command/motor_speed"
 #   ros_type_name: "std_msgs/msg/Float32"
 #   gz_type_name: "gz.msgs.Float"
-#   lazy: true
+#   lazy: false
 #   direction: ROS_TO_GZ
 
 # Enable Quadrotor command configuration.
 - topic_name: "/crazyflie7/enable"
   ros_type_name: "std_msgs/msg/Bool"
   gz_type_name: "gz.msgs.Boolean"
-  lazy: true
+  lazy: false
   direction: ROS_TO_GZ
 
 # Pose state configuration.
 - topic_name: "/crazyflie7/pose"
   ros_type_name: "geometry_msgs/msg/Pose"
   gz_type_name: "gz.msgs.Pose"
-  lazy: true
+  lazy: false
   direction: GZ_TO_ROS
   publisher_queue_size: 1
 
@@ -396,25 +396,25 @@
 - topic_name: "/crazyflie7/set_pose"
   ros_type_name: "geometry_msgs/msg/Pose"
   gz_type_name: "gz.msgs.Pose"
-  lazy: true
+  lazy: false
   direction: ROS_TO_GZ
 
 # # rgbd_camera_bridge configuration.
 # - topic_name: "/world/crazyflie/model/crazyflie7/link/body/sensor/rgb_camera_sensor/image"
 #   ros_type_name: "sensor_msgs/msg/Image"
 #   gz_type_name: "gz.msgs.Image"
-#   lazy: true
+#   lazy: false
 #   direction: GZ_TO_ROS
 
 # - topic_name: "/world/crazyflie/model/crazyflie7/link/body/sensor/rgb_camera_sensor/camera_info"
 #   ros_type_name: "sensor_msgs/msg/CameraInfo"
 #   gz_type_name: "gz.msgs.CameraInfo"
-#   lazy: true
+#   lazy: false
 #   direction: GZ_TO_ROS   
 
 - topic_name: "/crazyflie7/velocity" 
   ros_type_name: "geometry_msgs/msg/Twist"     
   gz_type_name: "gz.msgs.Twist"
-  lazy: true
+  lazy: false
   direction: GZ_TO_ROS
   publisher_queue_size: 1

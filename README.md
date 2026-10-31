@@ -113,19 +113,19 @@ python3 ~/ws_cce2026/src/cce2026-bearing-estimators/papers/cce2026/reproduce_tab
 
 ```bash
 cd ~/ws_cce2026/src/cce2026-bearing-estimators/papers/cce2026
-python3 monte_carlo.py --runs 30 --jobs 2 --noise 0.01 --output results/my_run
+python3 monte_carlo.py --runs 30 --jobs 3 --noise 0.01 --output results/my_run
 ```
 
 ## Results
 
-Each flight runs in simulated time with a different start for the followers (±1 cm) and its own wind. Both filters are applied offline to the raw measurements of the same flight. The values are the mean and standard deviation across flights, for the four pairs that target CF7. Of 30 flights, 28 finished and all 28 kept the formation. The other 2 stalled before finishing, with four flights running at once. The per-pair data is in `papers/cce2026/results/monte_carlo.csv`.
+Each flight runs in simulated time with a different start for the followers (±1 cm) and its own wind. Both filters are applied offline to the raw measurements of the same flight. The values are the mean and standard deviation across flights, for the four pairs that target CF7. All 30 flights finished and kept the formation, with three flights running at a time. The per-pair data is in `papers/cce2026/results/monte_carlo.csv`.
 
 | Parameters | Estimator | RMSE of the bearing [rad] | RMSE of the bearing rate [rad/s] |
 |---|---|---|---|
-| Table I of the paper | Kalman | 0.0344 ± 0.0013 | 0.0126 ± 0.0004 |
-| Table I of the paper | H-infinity | 0.0344 ± 0.0013 | 0.0146 ± 0.0004 |
-| Tuned here | Kalman | 0.0344 ± 0.0013 | 0.0119 ± 0.0003 |
-| Tuned here | H-infinity | 0.0344 ± 0.0013 | 0.0117 ± 0.0003 |
+| Table I of the paper | Kalman | 0.0347 ± 0.0015 | 0.0136 ± 0.0004 |
+| Table I of the paper | H-infinity | 0.0347 ± 0.0015 | 0.0157 ± 0.0004 |
+| Tuned here | Kalman | 0.0347 ± 0.0015 | 0.0126 ± 0.0005 |
+| Tuned here | H-infinity | 0.0347 ± 0.0015 | 0.0125 ± 0.0004 |
 
 In these flights the leaders move more slowly in simulated time than in the recorded flight of the paper. With the Table I parameters, the Kalman filter has the lower rate error here. In the paper's recorded flight, the H-infinity filter has the lower rate error, by 12 to 17 %, and `reproduce_table.py` reproduces that result. With parameters tuned for these flights, both filters perform about the same.
 
@@ -145,7 +145,7 @@ In the code, the leaders follow a 2 m lemniscate while climbing, at 0.133 m/s in
 ## Known limitations
 
 - **Marker visibility at the start.** With ±2 cm of noise in the start of the followers, about 13 % of the flights had a drone that never detected one of its markers. It then cannot follow the leaders, and the formation breaks. The camera resolution is 320×240 pixels, as in the paper.
-- **Runs at the same time.** With four flights at once, about 7 % stalled before finishing. Six flights in a row showed no stall. Use `--jobs 2` or fewer unless you have checked your machine.
+- **Runs at the same time.** Three flights at once all finished, but in an earlier version about 7 % stalled with four at once. Use `--jobs 3` or fewer.
 - **Control panel and Gazebo windows.** The panel was tested on a virtual display, and flights were tested with Gazebo in headless mode.
 
 ## Common problems
