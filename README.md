@@ -177,7 +177,7 @@ __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia ros2 launch uav_bri
 
 ## How to cite
 
-If you use this simulation, please cite the paper. To refer to this code specifically, also cite this repository using `CITATION.cff`.
+If you use this code, please cite both the paper and this repository.
 
 ```bibtex
 @inproceedings{rodriguez2026bearing,
@@ -187,6 +187,15 @@ If you use this simulation, please cite the paper. To refer to this code specifi
   pages     = {1--6},
   year      = {2026},
   url       = {https://ieeexplore.ieee.org/document/11735014}
+}
+```
+
+```bibtex
+@software{rodriguez2026cce2026sim,
+  author = {Rodriguez, Julio Cesar},
+  title  = {CCE 2026 Bearing Estimators Simulation},
+  year   = {2026},
+  url    = {https://github.com/juliordzcer/cce2026-bearing-estimators}
 }
 ```
 

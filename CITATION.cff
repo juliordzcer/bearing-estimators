@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "If you use these simulations, please cite the corresponding paper."
+message: "If you use this code, please cite both the paper and this repository."
 title: "CCE 2026 Bearing Estimators Simulation"
 type: software
 repository-code: "https://github.com/juliordzcer/cce2026-bearing-estimators"

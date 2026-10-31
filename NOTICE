@@ -4,8 +4,8 @@ Copyright 2026 Julio Cesar Rodriguez <contact@juliordz.com>
 Licensed under the Apache License, Version 2.0 (see LICENSE). Redistributions
 and derivative works must keep this notice, as section 4 of the license requires.
 
-If you use these simulations in academic work, please cite the corresponding
-paper listed in CITATION.cff and in each papers/<paper>/README.md.
+If you use this code in academic work, please cite both the paper and this
+repository, as listed in CITATION.cff.
 
 This repository is based on the simulations of the published papers, but it is
 not identical to the code used for them. See each papers/<paper>/README.md for
