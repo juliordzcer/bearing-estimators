@@ -38,6 +38,9 @@ def start_flight(index, base_dir, noise):
     env = dict(os.environ,
                ROS_DOMAIN_ID=str(domain), ROS_LOCALHOST_ONLY='1',
                GZ_PARTITION=f'mc{domain}', GZ_IP='127.0.0.1',
+               # Separate discovery ports: flights sharing them lose commands.
+               GZ_DISCOVERY_MSG_PORT=str(21000 + 10 * domain),
+               GZ_DISCOVERY_SRV_PORT=str(21001 + 10 * domain),
                UAV_IC_SEED=str(1000 + index), UAV_IC_NOISE_XY=str(noise))
     log = open(os.path.join(out, 'launch.log'), 'w')
     proc = subprocess.Popen(
