@@ -7,6 +7,30 @@ ROS 2 and Gazebo simulation based on the paper *Bearing Estimation on S² via Ta
 
 This repository is based on the simulation of the paper, but it is not the same code. See [Differences from the paper](#differences-from-the-paper).
 
+## How to cite
+
+If you use this code, please cite both the paper and this repository.
+
+```bibtex
+@inproceedings{rodriguez2026bearing,
+  author    = {Rodríguez, Julio César and Becerra, Héctor M. and Ruiz León, Javier},
+  title     = {Bearing Estimation on {S}$^2$ via Tangent-Space Measurements for {UAV} Formation Control},
+  booktitle = {2026 23rd International Conference on Electrical Engineering, Computing Science and Automatic Control (CCE)},
+  pages     = {1--6},
+  year      = {2026},
+  url       = {https://ieeexplore.ieee.org/document/11735014}
+}
+```
+
+```bibtex
+@software{rodriguez2026cce2026sim,
+  author = {Rodriguez, Julio Cesar},
+  title  = {CCE 2026 Bearing Estimators Simulation},
+  year   = {2026},
+  url    = {https://github.com/juliordzcer/bearing-estimators}
+}
+```
+
 ## What you need
 
 - A computer with **Ubuntu 24.04**. ROS 2 Jazzy does not support other versions directly.
@@ -177,30 +201,6 @@ __NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia ros2 launch uav_bri
 | `uav_msgs` | ROS messages |
 | `uav_tools` | Control panel, data logger, camera viewers |
 | `papers/cce2026` | Recorded flight, reproduction scripts, results |
-
-## How to cite
-
-If you use this code, please cite both the paper and this repository.
-
-```bibtex
-@inproceedings{rodriguez2026bearing,
-  author    = {Rodríguez, Julio César and Becerra, Héctor M. and Ruiz León, Javier},
-  title     = {Bearing Estimation on {S}$^2$ via Tangent-Space Measurements for {UAV} Formation Control},
-  booktitle = {2026 23rd International Conference on Electrical Engineering, Computing Science and Automatic Control (CCE)},
-  pages     = {1--6},
-  year      = {2026},
-  url       = {https://ieeexplore.ieee.org/document/11735014}
-}
-```
-
-```bibtex
-@software{rodriguez2026cce2026sim,
-  author = {Rodriguez, Julio Cesar},
-  title  = {CCE 2026 Bearing Estimators Simulation},
-  year   = {2026},
-  url    = {https://github.com/juliordzcer/bearing-estimators}
-}
-```
 
 ## License
 

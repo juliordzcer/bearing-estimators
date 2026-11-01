@@ -856,8 +856,6 @@ class BearingDataRecorder(Node):
         if is_raw:
             matlab_hint += [
                 '    t = par.t; g_meas = par.g_meas; g_gt = par.g_gt;',
-                '  Procesar offline con estimadores:',
-                '    python3 bearing_offline_comparison.py <archivo_raw.mat>',
             ]
         elif is_comp:
             matlab_hint += [
