@@ -91,7 +91,7 @@ Gazebo and the control panel open after a few seconds. Then:
 | `run_gui` | `true`, `false` | `true` | Open the control panel |
 | `auto_sequence` | `true`, `false` | `false` | Take off and start the automatic mode without the panel |
 | `run_camera_viewer` | `true`, `false` | `false` | Show the camera with the detected markers |
-| `enable_wind` | `true`, `false` | `true` | Wind disturbance |
+| `enable_wind` | `true`, `false` | `true` | Publish the wind messages. The Crazyflie model does not respond to them. See [Known limitations](#known-limitations) |
 
 Example without windows:
 
@@ -118,7 +118,7 @@ python3 monte_carlo.py --runs 30 --jobs 3 --noise 0.01 --output results/my_run
 
 ## Results
 
-Each flight runs in simulated time with a different start for the followers (±1 cm) and its own wind. Both filters are applied offline to the raw measurements of the same flight. The values are the mean and standard deviation across flights, for the four pairs that target CF7. All 30 flights finished and kept the formation, with three flights running at a time. The per-pair data is in `papers/cce2026/results/monte_carlo.csv`.
+Each flight runs in simulated time with a different start for the followers (±1 cm). Both filters are applied offline to the raw measurements of the same flight. The values are the mean and standard deviation across flights, for the four pairs that target CF7. All 30 flights finished and kept the formation, with three flights running at a time. The per-pair data is in `papers/cce2026/results/monte_carlo.csv`.
 
 | Parameters | Estimator | RMSE of the bearing [rad] | RMSE of the bearing rate [rad/s] |
 |---|---|---|---|
@@ -148,6 +148,7 @@ In the code, the leaders follow a 2 m lemniscate while climbing, at 0.133 m/s in
 
 - **Marker visibility at the start.** With ±2 cm of noise in the start of the followers, about 13 % of the flights had a drone that never detected one of its markers. It then cannot follow the leaders, and the formation breaks. The camera resolution is 320×240 pixels, as in the paper.
 - **Runs at the same time.** Simulations started by hand on one computer interfere with each other. To run several at once, give each its own `GZ_PARTITION`, `ROS_DOMAIN_ID`, `GZ_DISCOVERY_MSG_PORT` and `GZ_DISCOVERY_SRV_PORT`. `monte_carlo.py` does this for you.
+- **Wind.** The Crazyflie model does not have wind enabled in Gazebo, so the wind node does not change these flights, and the results above are without wind.
 - **Control panel and Gazebo windows.** The panel was tested on a virtual display, and flights were tested with Gazebo in headless mode.
 
 ## Common problems
