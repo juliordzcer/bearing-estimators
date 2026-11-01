@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "If you use this code, please cite both the paper and this repository."
 title: "CCE 2026 Bearing Estimators Simulation"
 type: software
-repository-code: "https://github.com/juliordzcer/cce2026-bearing-estimators"
+repository-code: "https://github.com/juliordzcer/bearing-estimators"
 license: Apache-2.0
 authors:
   - family-names: "Rodriguez"

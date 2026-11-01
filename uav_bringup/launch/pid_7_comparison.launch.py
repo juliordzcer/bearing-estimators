@@ -10,7 +10,7 @@ Durante la simulación corre únicamente el estimador H∞ para el control.
 Los 2 estimadores (Kalman, H∞) se aplican offline después:
 
     source install/setup.bash
-    python3 src/cce2026-bearing-estimators/papers/cce2026/reproduce_table.py \\
+    python3 src/bearing-estimators/papers/cce2026/reproduce_table.py \\
         /tmp/bearing_comparison/bearing_raw_YYYYMMDD_HHMMSS.mat
 
 El logger graba en:
@@ -43,8 +43,9 @@ from launch.actions import (
 )
 from launch.conditions import IfCondition, UnlessCondition
 from launch.launch_description_sources import PythonLaunchDescriptionSource
-from launch.substitutions import LaunchConfiguration, PathJoinSubstitution
+from launch.substitutions import LaunchConfiguration, PathJoinSubstitution, PythonExpression
 from launch_ros.actions import Node
+from launch_ros.parameter_descriptions import ParameterValue
 
 # =============================================================================
 # TEMPORIZACIÓN
@@ -55,6 +56,9 @@ DELAY_GUI       = 5.0
 
 NOISE_XY  = float(os.environ.get('UAV_IC_NOISE_XY', 0.0))
 NOISE_YAW = 0.0
+
+# Gains k0_xy, k1_xy, k0_z, k1_z of the bearing control for the ESP-drone.
+ESP_GAINS = (2.2764, 6.7424, 1.923, 3.8366)
 
 ALLOWED_CONNECTIONS = [
     'crazyflie2->crazyflie1',
@@ -71,6 +75,9 @@ ALLOWED_CONNECTIONS = [
 def generate_launch_description():
 
     # ── Args ──────────────────────────────────────────────────────────────────
+    drone_arg = DeclareLaunchArgument(
+        'drone', default_value='crazyflie',
+        description='Drone model: crazyflie | espdrone')
     headless_arg = DeclareLaunchArgument(
         'headless', default_value='false',
         description='Gazebo sin GUI (true/false)')
@@ -90,6 +97,7 @@ def generate_launch_description():
         'logger_output_dir', default_value='/tmp/bearing_comparison',
         description='Carpeta de salida para los archivos .mat de comparativa')
 
+    drone             = LaunchConfiguration('drone')
     headless          = LaunchConfiguration('headless')
     debug_bearing     = LaunchConfiguration('debug_bearing')
     run_gui           = LaunchConfiguration('run_gui')
@@ -133,7 +141,7 @@ def generate_launch_description():
         PythonLaunchDescriptionSource(
             os.path.join(pkg_ros_gz_sim, 'launch', 'gz_sim.launch.py')),
         launch_arguments={
-            'gz_args': '-r crazyflie_vision_7.sdf'
+            'gz_args': ['-r ', drone, '_vision_7.sdf']
         }.items(),
         condition=UnlessCondition(headless),
     )
@@ -142,7 +150,7 @@ def generate_launch_description():
         PythonLaunchDescriptionSource(
             os.path.join(pkg_ros_gz_sim, 'launch', 'gz_sim.launch.py')),
         launch_arguments={
-            'gz_args': '-s -r --headless-rendering crazyflie_vision_7.sdf'
+            'gz_args': ['-s -r --headless-rendering ', drone, '_vision_7.sdf']
         }.items(),
         condition=IfCondition(headless),
     )
@@ -154,8 +162,8 @@ def generate_launch_description():
         name='ros_gz_bridge',
         output='screen',
         parameters=[{
-            'config_file': os.path.join(
-                pkg_uav_bringup, 'config', 'crazyflie_7.yaml'),
+            'config_file': PathJoinSubstitution([
+                pkg_uav_bringup, 'config', [drone, '_7.yaml']]),
         }],
     )
 
@@ -188,6 +196,12 @@ def generate_launch_description():
         }],
     )
 
+    # The ESP-drone carries a cube of markers above it. The Crazyflie has one marker.
+    def for_drone(crazyflie, espdrone):
+        return ParameterValue(PythonExpression(
+            [str(espdrone), " if '", drone, "' == 'espdrone' else ", str(crazyflie)]),
+            value_type=float)
+
     # ── Controlador ───────────────────────────────────────────────────────────
     controller_node = Node(
         package='uav_controller',
@@ -211,9 +225,9 @@ def generate_launch_description():
             'amplitude':                0.5,
             'frequency':                0.02,
             'bearing_loss_timeout_sec': 0.5,
-            'pid_bearing.k0_x': 2.1,  'pid_bearing.k1_x': 4.0,  'pid_bearing.k2_x': 0.01,
-            'pid_bearing.k0_y': 2.1,  'pid_bearing.k1_y': 4.0,  'pid_bearing.k2_y': 0.01,
-            'pid_bearing.k0_z': 1.65,  'pid_bearing.k1_z': 2.2,  'pid_bearing.k2_z': 0.013003,
+            'pid_bearing.k0_x': for_drone(2.1, ESP_GAINS[0]),  'pid_bearing.k1_x': for_drone(4.0, ESP_GAINS[1]),  'pid_bearing.k2_x': 0.01,
+            'pid_bearing.k0_y': for_drone(2.1, ESP_GAINS[0]),  'pid_bearing.k1_y': for_drone(4.0, ESP_GAINS[1]),  'pid_bearing.k2_y': 0.01,
+            'pid_bearing.k0_z': for_drone(1.65, ESP_GAINS[2]),  'pid_bearing.k1_z': for_drone(2.2, ESP_GAINS[3]),  'pid_bearing.k2_z': 0.013003,
             'pid.kp_x': 1.5,  'pid.kd_x': 0.05,  'pid.ki_x': 0.2,
             'pid.min_output_x': -1.0,  'pid.max_output_x': 1.0,
             'pid.integrator_min_x': -0.5,  'pid.integrator_max_x': 0.5,
@@ -247,7 +261,11 @@ def generate_launch_description():
             'image_height':               240,
             'camera_fov_horizontal_deg':  66.0,
             'aruco_dictionary_id':        9,
-            'aruco_marker_length':        0.045,
+            'aruco_marker_length':        for_drone(0.045, 0.05),
+            'aruco_cube_side':            for_drone(0.0, 0.0667),
+            'aruco_cube_height':          for_drone(0.0, 0.0731),
+            'camera_offset_x':            for_drone(0.0, 0.06),
+            'camera_pitch_deg':           for_drone(0.0, 6.0),
             'aruco_id_to_robot_name_map': aruco_id_map,
             'kalman_max_prediction_sec':  0.2,
             'thread_count':               -1,
@@ -296,6 +314,7 @@ def generate_launch_description():
 
     # ── Launch description ────────────────────────────────────────────────────
     return LaunchDescription([
+        drone_arg,
         headless_arg,
         debug_bearing_arg,
         run_gui_arg,

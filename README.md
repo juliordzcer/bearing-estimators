@@ -23,7 +23,7 @@ You do not need to know ROS or Python to run it. Copy each block into a terminal
 sudo apt update && sudo apt install -y git
 mkdir -p ~/ws_cce2026/src
 cd ~/ws_cce2026/src
-git clone https://github.com/juliordzcer/cce2026-bearing-estimators.git
+git clone https://github.com/juliordzcer/bearing-estimators.git
 ```
 
 **2. Install ROS 2, Gazebo and the other dependencies**
@@ -31,7 +31,7 @@ git clone https://github.com/juliordzcer/cce2026-bearing-estimators.git
 This takes a while and asks for your password. It was tested on a clean Ubuntu 24.04 installation.
 
 ```bash
-cd ~/ws_cce2026/src/cce2026-bearing-estimators
+cd ~/ws_cce2026/src/bearing-estimators
 ./install_deps.sh
 ```
 
@@ -106,13 +106,13 @@ ros2 launch uav_bringup pid_7.launch.py headless:=true run_gui:=false auto_seque
 **Table II of the paper**, from the flight recorded for it. It needs no Gazebo and takes a few seconds:
 
 ```bash
-python3 ~/ws_cce2026/src/cce2026-bearing-estimators/papers/cce2026/reproduce_table.py
+python3 ~/ws_cce2026/src/bearing-estimators/papers/cce2026/reproduce_table.py
 ```
 
 **Monte Carlo study** with new Gazebo flights:
 
 ```bash
-cd ~/ws_cce2026/src/cce2026-bearing-estimators/papers/cce2026
+cd ~/ws_cce2026/src/bearing-estimators/papers/cce2026
 python3 monte_carlo.py --runs 30 --jobs 3 --noise 0.01 --output results/my_run
 ```
 
@@ -198,7 +198,7 @@ If you use this code, please cite both the paper and this repository.
   author = {Rodriguez, Julio Cesar},
   title  = {CCE 2026 Bearing Estimators Simulation},
   year   = {2026},
-  url    = {https://github.com/juliordzcer/cce2026-bearing-estimators}
+  url    = {https://github.com/juliordzcer/bearing-estimators}
 }
 ```
 
